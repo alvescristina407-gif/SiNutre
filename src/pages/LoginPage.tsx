@@ -2,11 +2,15 @@ import type { ReactNode } from 'react';
 import { GithubLogo } from '@phosphor-icons/react';
 import { API_URL } from '@/lib/api';
 
-// Cores extraídas do SVG do protótipo
-const GREEN = '#00C68F';
-const BG = '#FBFBFB';
-const TEXT_DARK = '#1F2937';
-const TEXT_MUTED = '#727272';
+// Nova paleta
+const PRIMARY = '#F4A261';    // Laranja suave
+const SECONDARY = '#F8F1E7';  // Creme/Bege claro
+const ACCENT = '#F7C59F';     // Pêssego
+const SUCCESS = '#8BCF8B';    // Verde suave
+const ERROR = '#E57373';      // Vermelho suave
+
+const TEXT_DARK = '#4A3F35';
+const TEXT_MUTED = '#7D746B';
 
 function startGithubLogin() {
   window.location.href = `${API_URL}/auth/github`;
@@ -18,18 +22,18 @@ export function LoginPage() {
       {/* ============================= Desktop ============================= */}
       <div
         className="hidden md:block relative min-h-screen w-full overflow-hidden"
-        style={{ backgroundColor: BG }}
+        style={{ backgroundColor: SECONDARY }}
       >
         {/* Painel verde (≈28% da largura, do protótipo) */}
         <div
           className="absolute inset-y-0 left-0 w-[28%]"
-          style={{ backgroundColor: GREEN }}
+          style={{ backgroundColor: PRIMARY }}
         />
 
         {/* Marca SiNutre — topo da área branca, alinhada à esquerda (logo após o painel verde) */}
         <h1
           className="absolute top-10 left-[30%] lg:top-12 z-20 text-5xl lg:text-6xl font-extrabold tracking-tight"
-          style={{ color: GREEN }}
+          style={{ color: PRIMARY}}
         >
           SiNutre
         </h1>
@@ -69,11 +73,11 @@ export function LoginPage() {
       {/* ============================= Mobile ============================= */}
       <div
         className="md:hidden min-h-screen flex flex-col"
-        style={{ backgroundColor: BG }}
+        style={{ backgroundColor: SECONDARY }}
       >
         <header
           className="text-white px-6 pt-10 pb-8 flex flex-col items-center"
-          style={{ backgroundColor: GREEN }}
+          style={{ backgroundColor: PRIMARY }}
         >
           <div className="relative w-[85%] max-w-sm aspect-[596/419]">
             <img
@@ -99,7 +103,7 @@ export function LoginPage() {
         <main className="flex-1 flex flex-col px-6 py-8">
           <h1
             className="text-4xl font-extrabold tracking-tight mb-8"
-            style={{ color: GREEN }}
+            style={{ color: PRIMARY}}
           >
             SiNutre
           </h1>
@@ -117,7 +121,7 @@ function WelcomeBlock() {
     <div className="flex flex-col items-center gap-6 text-center max-w-sm w-full">
       <h2
         className="text-4xl lg:text-5xl font-bold"
-        style={{ color: GREEN }}
+        style={{ color: PRIMARY }}
       >
         Bem-vindo(a)!
       </h2>

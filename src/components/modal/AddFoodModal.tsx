@@ -122,12 +122,13 @@ export function AddFoodModal({
           </form>
 
           <button
-            className="btn btn-primary"
-            disabled={loading}
-            onClick={handleSave}
-          >
-            {loading ? 'Salvando...' : 'Salvar'}
-          </button>
+  className="btn text-white border-0"
+  style={{ backgroundColor: '#C85C5C' }}
+  disabled={loading}
+  onClick={handleSave}
+>
+  {loading ? 'Salvando...' : 'Salvar'}
+</button>
         </div>
       </div>
     </dialog>

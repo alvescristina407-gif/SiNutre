@@ -5,13 +5,15 @@ import {
   useState,
 } from 'react';
 
-import { api } from '@/lib/api';
+import { api, clearToken } from '@/lib/api';;
 import type { User } from '@/types/user';
+
 
 interface AuthContextData {
   user: User | null;
   loading: boolean;
   refreshUser: () => Promise<void>;
+  logout: () => void;
 }
 
 const AuthContext =
@@ -41,7 +43,14 @@ export function AuthProvider({
       setUser(null);
     }
   }
+function logout() {
+  alert('Logout executado!');
 
+  clearToken();
+  setUser(null);
+
+  window.location.href = '/login';
+}
   useEffect(() => {
     refreshUser().finally(() =>
       setLoading(false),
@@ -51,10 +60,11 @@ export function AuthProvider({
   return (
     <AuthContext.Provider
       value={{
-        user,
-        loading,
-        refreshUser,
-      }}
+  user,
+  loading,
+  refreshUser,
+  logout,
+}}
     >
       {children}
     </AuthContext.Provider>
