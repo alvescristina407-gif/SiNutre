@@ -5,9 +5,6 @@ import { API_URL } from '@/lib/api';
 // Nova paleta
 const PRIMARY = '#F4A261';    // Laranja suave
 const SECONDARY = '#F8F1E7';  // Creme/Bege claro
-const ACCENT = '#F7C59F';     // Pêssego
-const SUCCESS = '#8BCF8B';    // Verde suave
-const ERROR = '#E57373';      // Vermelho suave
 
 const TEXT_DARK = '#4A3F35';
 const TEXT_MUTED = '#7D746B';

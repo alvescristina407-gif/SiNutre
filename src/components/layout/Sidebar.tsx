@@ -1,6 +1,4 @@
 //import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '@/contexts/AuthContext';
 import { NAV_ITEMS } from '@/constants/navigation';
 import { SidebarBrand } from './SidebarBrand';
 import { SidebarItem } from './SidebarItem';
@@ -12,9 +10,6 @@ interface SidebarProps {
 export function Sidebar({ drawerId }: SidebarProps) {
   // const [activeId, setActiveId] = useState<string>('home');
   const expanded = true;
-
-  const { logout } = useAuth();
-  const navigate = useNavigate();
 
   function handleLogout() {
   localStorage.removeItem('sinutre.token');
